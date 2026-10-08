@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Breiz loo | Luxury Accessories</title>
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f7f4ee;
+    color:#1c1c1c;
+}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+    background:#171717;
+    color:white;
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 2px 12px rgba(0,0,0,.18);
+}
+
+.header-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:13px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo{
+    color:#d6b36a;
+    font-size:23px;
+    font-weight:bold;
+    letter-spacing:2px;
+    white-space:nowrap;
+}
+
+.search{
+    flex:1;
+    display:flex;
+    max-width:650px;
+    margin:auto;
+}
+
+.search input{
+    width:100%;
+    border:none;
+    outline:none;
+    padding:12px 14px;
+    font-size:14px;
+    background:white;
+    color:#222;
+    border-radius:5px 0 0 5px;
+}
+
+.search button{
+    border:none;
+    width:48px;
+    background:#d6b36a;
+    color:#171717;
+    border-radius:0 5px 5px 0;
+    font-size:18px;
+}
+
+.cart-button{
+    background:transparent;
+    color:white;
+    border:1px solid #555;
+    padding:10px 13px;
+    border-radius:5px;
+    white-space:nowrap;
+}
+
+.cart-number{
+    background:#d6b36a;
+    color:#111;
+    padding:2px 6px;
+    border-radius:50%;
+    font-size:11px;
+    font-weight:bold;
+}
+
+
+/* =========================
+   CATEGORY BAR
+========================= */
+
+.category-bar{
+    background:#fffdf9;
+    border-bottom:1px solid #e5dfd3;
+    overflow-x:auto;
+}
+
+.category-inner{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    gap:8px;
+    padding:10px 13px;
+}
+
+.category-inner button{
+    border:1px solid #d9d1c2;
+    background:#fffdf9;
+    padding:9px 20px;
+    border-radius:20px;
+    white-space:nowrap;
+    color:#333;
+}
+
+.category-inner button:hover,
+.category-inner button.active{
+    background:#1c1c1c;
+    color:#d6b36a;
+    border-color:#1c1c1c;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    max-width:1200px;
+    margin:18px auto;
+    padding:50px 25px;
+    border-radius:8px;
+
+    background:
+    linear-gradient(
+        100deg,
+        #1b1b1b 0%,
+        #292722 55%,
+        #3b3528 100%
+    );
+
+    color:white;
+}
+
+.hero-small{
+    color:#d6b36a;
+    font-size:13px;
+    letter-spacing:3px;
+    margin-bottom:12px;
+    text-transform:uppercase;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+    font-size:38px;
+    font-weight:normal;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#e5e1d9;
+    max-width:500px;
+    line-height:1.6;
+}
+
+.hero-button{
+    margin-top:22px;
+    background:#d6b36a;
+    color:#181818;
+    border:none;
+    padding:12px 24px;
+    border-radius:4px;
+    font-weight:bold;
+}
+
+.hero-button:hover{
+    background:#ead09b;
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:0 13px;
+}
+
+.section-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:25px 0 15px;
+}
+
+.section-heading h2{
+    font-family:Georgia,serif;
+    font-weight:normal;
+    font-size:25px;
+}
+
+.section-heading span{
+    color:#777;
+    font-size:13px;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.product-card{
+    background:#fffdf9;
+    border:1px solid #e6dfd2;
+    border-radius:7px;
+    overflow:hidden;
+    transition:.2s;
+}
+
+.product-card:hover{
+    transform:translateY(-2px);
+    box-shadow:0 7px 20px rgba(45,38,27,.10);
+}
+
+.product-image{
+    height:210px;
+    background:
+    linear-gradient(
+        135deg,
+        #eee8dc,
+        #dcd3c4
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:70px;
+    position:relative;
+}
+
+.product-label{
+    position:absolute;
+    top:10px;
+    left:10px;
+    background:#1c1c1c;
+    color:#d6b36a;
+    padding:5px 9px;
+    font-size:10px;
+    letter-spacing:1px;
+}
+
+.product-info{
+    padding:15px;
+}
+
+.product-category{
+    color:#8b806f;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:7px;
+}
+
+.product-name{
+    font-family:Georgia,serif;
+    font-size:18px;
+    margin-bottom:9px;
+}
+
+.product-price{
+    color:#a17b36;
+    font-weight:bold;
+    margin-bottom:13px;
+}
+
+.product-buttons{
+    display:flex;
+    gap:7px;
+}
+
+.add-cart,
+.buy-now{
+    flex:1;
+    padding:10px 5px;
+    border-radius:4px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.add-cart{
+    background:white;
+    border:1px solid #222;
+    color:#222;
+}
+
+.buy-now{
+    background:#1c1c1c;
+    border:1px solid #1c1c1c;
+    color:#d6b36a;
+}
+
+.add-cart:hover{
+    background:#f1ede5;
+}
+
+.buy-now:hover{
+    background:#302d27;
+}
+
+
+/* =========================
+   INFO STRIP
+========================= */
+
+.info-strip{
+    max-width:1200px;
+    margin:30px auto;
+    padding:20px 13px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+}
+
+.info-box{
+    background:#fffdf9;
+    border:1px solid #e6dfd2;
+    padding:18px 10px;
+    text-align:center;
+    border-radius:6px;
+}
+
+.info-box strong{
+    display:block;
+    margin-bottom:5px;
+    font-family:Georgia,serif;
+}
+
+.info-box span{
+    color:#777;
+    font-size:12px;
+}
+
+
+/* =========================
+   CART
+========================= */
+
+.overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    z-index:200;
+}
+
+.cart-panel{
+    width:92%;
+    max-width:440px;
+    height:100%;
+    margin-left:auto;
+    background:#fffdf9;
+    padding:18px;
+    overflow-y:auto;
+}
+
+.cart-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-bottom:15px;
+    border-bottom:1px solid #ddd4c5;
+}
+
+.cart-header h2{
+    font-family:Georgia,serif;
+    font-weight:normal;
+}
+
+.close-cart{
+    border:none;
+    background:#eee8dc;
+    padding:8px 12px;
+    border-radius:4px;
+}
+
+.cart-item{
+    padding:16px 0;
+    border-bottom:1px solid #e5dfd3;
+}
+
+.cart-item-name{
+    font-family:Georgia,serif;
+    font-size:16px;
+}
+
+.quantity{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    margin-top:9px;
+}
+
+.quantity button{
+    width:28px;
+    height:28px;
+    border:1px solid #ccc;
+    background:white;
+    border-radius:3px;
+}
+
+.remove{
+    border:none;
+    background:none;
+    color:#9b2d2d;
+    margin-top:8px;
+    font-size:12px;
+}
+
+.order-note{
+    margin-top:20px;
+    padding:12px;
+    background:#eee8dc;
+    font-size:12px;
+    line-height:1.5;
+}
+
+.whatsapp-button{
+    width:100%;
+    margin-top:15px;
+    padding:14px;
+    border:none;
+    border-radius:5px;
+    background:#237b42;
+    color:white;
+    font-size:15px;
+    font-weight:bold;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    margin-top:35px;
+    background:#171717;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+.footer-logo{
+    color:#d6b36a;
+    font-family:Georgia,serif;
+    font-size:24px;
+    margin-bottom:8px;
+}
+
+footer p{
+    color:#bbb;
+    font-size:13px;
+    line-height:1.7;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .header-inner{
+        flex-wrap:wrap;
+    }
+
+    .logo{
+        font-size:19px;
+    }
+
+    .search{
+        order:3;
+        width:100%;
+        max-width:none;
+    }
+
+    .hero{
+        margin:12px;
+        padding:35px 20px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+    }
+
+    .product-image{
+        height:160px;
+        font-size:55px;
+    }
+
+    .product-info{
+        padding:11px;
+    }
+
+    .product-name{
+        font-size:16px;
+    }
+
+    .info-strip{
+        grid-template-columns:1fr;
+        margin:20px auto;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+<div class="header-inner">
+
+    <div class="logo">
+        BREIZ LOO
+    </div>
+
+    <div class="search">
+
+        <input
+            id="searchInput"
+            type="text"
+            placeholder="Search bracelets, sunglasses..."
+        >
+
+        <button>
+            🔍
+        </button>
+
+    </div>
+
+    <button
+        class="cart-button"
+        onclick="openCart()"
+    >
+        🛒 Cart
+        <span
+            class="cart-number"
+            id="cartCount"
+        >0</span>
+    </button>
+
+</div>
+
+</header>
+
+
+<!-- CATEGORIES -->
+
+<nav class="category-bar">
+
+<div class="category-inner">
+
+    <button
+        class="active"
+        onclick="filterCategory('all',this)"
+    >
+        All
+    </button>
+
+    <button
+        onclick="filterCategory('bracelets',this)"
+    >
+        Bracelets
+    </button>
+
+    <button
+        onclick="filterCategory('sunglasses',this)"
+    >
+        Sunglasses
+    </button>
+
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-small">
+        BREIZ LOO COLLECTION
+    </div>
+
+    <h1>
+        Timeless.<br>
+        Elegant. Yours.
+    </h1>
+
+    <p>
+        Discover our premium collection of
+        bracelets and sunglasses.
+    </p>
+
+    <button
+        class="hero-button"
+        onclick="scrollToProducts()"
+    >
+        Shop Collection
+    </button>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<main class="container">
+
+<div class="section-heading">
+
+    <h2>
+        Featured Collection
+    </h2>
+
+    <span>
+        Premium Accessories
+    </span>
+
+</div>
+
+
+<div
+    class="products"
+    id="productList"
+>
+
+
+<!-- BRACELET -->
+
+<div
+    class="product-card product"
+    data-category="bracelets"
+    data-name="Premium Bracelet"
+>
+
+    <div class="product-image">
+
+        <div class="product-label">
+            NEW
+        </div>
+
+        💎
+
+    </div>
+
+    <div class="product-info">
+
+        <div class="product-category">
+            Bracelets
+        </div>
+
+        <div class="product-name">
+            Premium Bracelet
+        </div>
+
+        <div class="product-price">
+            Price: Contact us
+        </div>
+
+        <div class="product-buttons">
+
+            <button
+                class="add-cart"
+                onclick="addToCart(
+                    'bracelet',
+                    'Premium Bracelet'
+                )"
+            >
+                Add to Cart
+            </button>
+
+            <button
+                class="buy-now"
+                onclick="buyNow(
+                    'bracelet',
+                    'Premium Bracelet'
+                )"
+            >
+                Buy Now
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- SUNGLASSES -->
+
+<div
+    class="product-card product"
+    data-category="sunglasses"
+    data-name="Classic Sunglasses"
+>
+
+    <div class="product-image">
+
+        <div class="product-label">
+            NEW
+        </div>
+
+        🕶️
+
+    </div>
+
+    <div class="product-info">
+
+        <div class="product-category">
+            Sunglasses
+        </div>
+
+        <div class="product-name">
+            Classic Sunglasses
+        </div>
+
+        <div class="product-price">
+            Price: Contact us
+        </div>
+
+        <div class="product-buttons">
+
+            <button
+                class="add-cart"
+                onclick="addToCart(
+                    'sunglasses',
+                    'Classic Sunglasses'
+                )"
+            >
+                Add to Cart
+            </button>
+
+            <button
+                class="buy-now"
+                onclick="buyNow(
+                    'sunglasses',
+                    'Classic Sunglasses'
+                )"
+            >
+                Buy Now
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<!-- INFORMATION -->
+
+<div class="info-strip">
+
+    <div class="info-box">
+
+        <strong>Premium Style</strong>
+
+        <span>
+            Carefully selected accessories
+        </span>
+
+    </div>
+
+    <div class="info-box">
+
+        <strong>Easy Ordering</strong>
+
+        <span>
+            Order directly through WhatsApp
+        </span>
+
+    </div>
+
+    <div class="info-box">
+
+        <strong>Breiz loo</strong>
+
+        <span>
+            Bracelets & Sunglasses
+        </span>
+
+    </div>
+
+</div>
+
+
+<!-- CART -->
+
+<div
+    class="overlay"
+    id="cartOverlay"
+>
+
+<div class="cart-panel">
+
+    <div class="cart-header">
+
+        <h2>
+            Your Cart
+        </h2>
+
+        <button
+            class="close-cart"
+            onclick="closeCart()"
+        >
+            ✕
+        </button>
+
+    </div>
+
+
+    <div id="cartItems"></div>
+
+
+    <div class="order-note">
+
+        <strong>Price information</strong><br>
+
+        Product prices will be confirmed
+        with you on WhatsApp before the order
+        is finalized.
+
+    </div>
+
+
+    <button
+        class="whatsapp-button"
+        onclick="sendWhatsApp()"
+    >
+        💬 Order on WhatsApp
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+        BREIZ LOO
+    </div>
+
+    <p>
+        Premium Bracelets • Sunglasses
+    </p>
+
+    <p>
+        WhatsApp: 9544000278
+    </p>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   CART DATA
+========================= */
+
+let cart = [];
+
+
+/* =========================
+   ADD TO CART
+========================= */
+
+function addToCart(id,name){
+
+    let existing = cart.find(
+        item => item.id === id
+    );
+
+    if(existing){
+
+        existing.qty++;
+
+    }else{
+
+        cart.push({
+            id:id,
+            name:name,
+            qty:1
+        });
+
+    }
+
+    updateCart();
+
+    alert(
+        name + " added to cart"
+    );
+}
+
+
+/* =========================
+   BUY NOW
+========================= */
+
+function buyNow(id,name){
+
+    cart = [
+
+        {
+            id:id,
+            name:name,
+            qty:1
+        }
+
+    ];
+
+    updateCart();
+
+    sendWhatsApp();
+}
+
+
+/* =========================
+   UPDATE CART
+========================= */
+
+function updateCart(){
+
+    let total = 0;
+
+    cart.forEach(
+        item => total += item.qty
+    );
+
+    document.getElementById(
+        "cartCount"
+    ).textContent = total;
+
+
+    let box =
+        document.getElementById(
+            "cartItems"
+        );
+
+
+    if(cart.length === 0){
+
+        box.innerHTML = `
+
+            <div style="
+                text-align:center;
+                padding:40px 10px;
+                color:#777;
+            ">
+
+                Your cart is empty 🛒
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    box.innerHTML = "";
+
+
+    cart.forEach(item => {
+
+        let div =
+            document.createElement("div");
+
+        div.className =
+            "cart-item";
+
+
+        div.innerHTML = `
+
+            <div class="cart-item-name">
+                ${item.name}
+            </div>
+
+            <div class="quantity">
+
+                <button
+                    onclick="changeQuantity(
+                        '${item.id}',
+                        -1
+                    )"
+                >
+                    −
+                </button>
+
+                <span>
+                    ${item.qty}
+                </span>
+
+                <button
+                    onclick="changeQuantity(
+                        '${item.id}',
+                        1
+                    )"
+                >
+                    +
+                </button>
+
+            </div>
+
+            <button
+                class="remove"
+                onclick="removeItem(
+                    '${item.id}'
+                )"
+            >
+                Remove
+            </button>
+
+        `;
+
+        box.appendChild(div);
+
+    });
+
+}
+
+
+/* =========================
+   QUANTITY
+========================= */
+
+function changeQuantity(id,amount){
+
+    let item =
+        cart.find(
+            item => item.id === id
+        );
+
+    if(!item) return;
+
+
+    item.qty += amount;
+
+
+    if(item.qty <= 0){
+
+        cart =
+            cart.filter(
+                item => item.id !== id
+            );
+
+    }
+
+
+    updateCart();
+}
+
+
+/* =========================
+   REMOVE
+========================= */
+
+function removeItem(id){
+
+    cart =
+        cart.filter(
+            item => item.id !== id
+        );
+
+    updateCart();
+}
+
+
+/* =========================
+   OPEN CART
+========================= */
+
+function openCart(){
+
+    document.getElementById(
+        "cartOverlay"
+    ).style.display = "block";
+
+    updateCart();
+}
+
+
+/* =========================
+   CLOSE CART
+========================= */
+
+function closeCart(){
+
+    document.getElementById(
+        "cartOverlay"
+    ).style.display = "none";
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+function sendWhatsApp(){
+
+    if(cart.length === 0){
+
+        alert(
+            "Your cart is empty!"
+        );
+
+        return;
+    }
+
+
+    let message =
+        "Hello Breiz loo 👋\n\n" +
+        "I would like to order:\n\n";
+
+
+    cart.forEach(item => {
+
+        message +=
+            "• " +
+            item.name +
+            " × " +
+            item.qty +
+            "\n";
+
+    });
+
+
+    message +=
+        "\nPlease confirm the price and availability.\n\n" +
+        "Thank you!";
+
+
+    /* YOUR NUMBER */
+
+    let phone =
+        "919544000278";
+
+
+    let whatsappURL =
+        "https://wa.me/" +
+        phone +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+    window.location.href =
+        whatsappURL;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+document
+.getElementById("searchInput")
+.addEventListener(
+    "input",
+    function(){
+
+        let text =
+            this.value.toLowerCase();
+
+
+        document
+        .querySelectorAll(".product")
+        .forEach(card => {
+
+            let name =
+                card.dataset.name
+                .toLowerCase();
+
+
+            if(
+                name.includes(text)
+            ){
+
+                card.style.display =
+                    "";
+
+            }else{
+
+                card.style.display =
+                    "none";
+
+            }
+
+        });
+
+    }
+);
+
+
+/* =========================
+   CATEGORY FILTER
+========================= */
+
+function filterCategory(
+    category,
+    button
+){
+
+    document
+    .querySelectorAll(
+        ".category-inner button"
+    )
+    .forEach(btn => {
+
+        btn.classList.remove(
+            "active"
+        );
+
+    });
+
+
+    button.classList.add(
+        "active"
+    );
+
+
+    document
+    .querySelectorAll(".product")
+    .forEach(card => {
+
+        if(
+            category === "all" ||
+            card.dataset.category ===
+            category
+        ){
+
+            card.style.display =
+                "";
+
+        }else{
+
+            card.style.display =
+                "none";
+
+        }
+
+    });
+
+}
+
+
+/* =========================
+   SHOP BUTTON
+========================= */
+
+function scrollToProducts(){
+
+    document
+    .getElementById("productList")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* START */
+
+updateCart();
+
+</script>
+
+</body>
+</html>
